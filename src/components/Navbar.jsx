@@ -1,28 +1,64 @@
-import { links } from '../data';
+import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
+
+const links = [
+  { id: 1, href: '#home', text: 'Home' },
+  { id: 2, href: '#skills', text: 'Skills' },
+  { id: 3, href: '#about', text: 'About' },
+  { id: 4, href: '#projects', text: 'Projects' },
+];
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className='bg-purple-700'>
-      <div className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8'>
-        <h2 className='text-3xl font-bold'>
-          Port<span className='text-purple-400'>Folio</span>
+    <nav className="bg-purple-700 text-white relative z-50">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center sm:py-6">
+        {/* Logo */}
+        <h2 className="text-3xl font-bold">
+          Port<span className="text-purple-300">Folio</span>
         </h2>
-        <div className='flex gap-x-3'>
-          {links.map((link) => {
-            const { id, href, text } = link;
-            return (
-              <a
-                key={id}
-                href={href}
-                className='capitalize text-lg tracking-wide hover:text-cyan-400 duration-300 font-bold'
-              >
-                {text}
-              </a>
-            );
-          })}
+
+        {/* Toggle Button */}
+        <button
+          className="text-3xl sm:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <FiX /> : <FiMenu />}
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden sm:flex gap-6 text-lg font-semibold">
+          {links.map(({ id, href, text }) => (
+            <a
+              key={id}
+              href={href}
+              className="capitalize tracking-wide hover:text-cyan-400 duration-300"
+            >
+              {text}
+            </a>
+          ))}
         </div>
       </div>
+
+      {/* Mobile Dropdown Popup */}
+      {isOpen && (
+        <div className="absolute top-full right-1 w-[180px] text-center bg-purple-800 rounded-2xl shadow-2xl sm:hidden">
+          {links.map(({ id, href, text }) => (
+            <a
+              key={id}
+              href={href}
+              onClick={() => setIsOpen(false)}
+        className="block w-full px-4 py-2 text-white  hover:text-black transition duration-300"
+
+            >
+              {text}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
+
 export default Navbar;
