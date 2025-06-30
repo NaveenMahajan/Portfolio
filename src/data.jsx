@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { FaHtml5, FaJs, FaReact } from 'react-icons/fa';
-
+import { SiTailwindcss } from 'react-icons/si';
 export const links = [
   { id: nanoid(), href: '#home', text: 'Home' },
   { id: nanoid(), href: '#skills', text: 'skills' },
@@ -18,9 +18,9 @@ export const skills = [
   },
   {
     id: nanoid(),
-    title: 'Javascript',
+    title: 'JavaScript',
     icon: <FaJs className='h-16 w-16 text-purple-400' />,
-    text: 'Expertise in JavaScript, building interactive and dynamic web applications with a focus on seamless user interactions and functionality',
+    text: 'Expertise in JavaScript, building interactive and dynamic web applications with a focus on seamless user interactions and functionality.',
   },
   {
     id: nanoid(),
@@ -28,7 +28,14 @@ export const skills = [
     icon: <FaReact className='h-16 w-16 text-purple-400' />,
     text: 'Advanced proficiency in React, developing efficient and interactive front-end applications with a strong emphasis on component-based architecture.',
   },
+  {
+    id: nanoid(),
+    title: 'Tailwind CSS',
+    icon: <SiTailwindcss className='h-16 w-16 text-purple-400' />,
+    text: 'Proficient in Tailwind CSS, crafting modern, responsive UIs rapidly with utility-first styling and streamlined design workflows.',
+  },
 ];
+
 
 export const projects = [
   {
