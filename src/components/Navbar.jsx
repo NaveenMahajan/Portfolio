@@ -43,21 +43,21 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Dropdown Popup */}
-      {isOpen && (
-        <div className="absolute top-full right-1 w-[180px] text-center bg-purple-800 rounded-2xl shadow-2xl sm:hidden">
-          {links.map(({ id, href, text }) => (
-            <a
-              key={id}
-              href={href}
-              onClick={() => setIsOpen(false)}
-        className="block w-full px-4 py-2 text-white  hover:text-black transition duration-300"
+{isOpen && (
+  <div className="absolute top-full right-1 w-[180px] text-center bg-purple-800/70 backdrop-blur-0 rounded-2xl shadow-2xl sm:hidden z-50">
+    {links.map(({ id, href, text }) => (
+      <a
+        key={id}
+        href={href}
+        onClick={() => setIsOpen(false)}
+        className="block w-full px-4 py-2 text-white hover:text-black  transition duration-300"
+      >
+        {text}
+      </a>
+    ))}
+  </div>
+)}
 
-            >
-              {text}
-            </a>
-          ))}
-        </div>
-      )}
     </nav>
   );
 };
