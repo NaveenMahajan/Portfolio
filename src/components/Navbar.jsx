@@ -4,8 +4,9 @@ import { FiMenu, FiX } from 'react-icons/fi';
 const links = [
   { id: 1, href: '#home', text: 'Home' },
   { id: 2, href: '#skills', text: 'Skills' },
-  { id: 3, href: '#about', text: 'About' },
-  { id: 4, href: '#projects', text: 'Projects' },
+ { id: 3, href: '#experience', text: 'Experience' },
+  { id: 4, href: '#about', text: 'About' },
+  { id: 5, href: '#projects', text: 'Projects' },
 ];
 
 const Navbar = () => {
