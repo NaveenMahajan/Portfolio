@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import aboutSvg from '../assets/about.svg';
+import about2 from '../../public/about2.png';
 import SectionTitle from './SectionTitle';
 import { FiMail, FiX } from 'react-icons/fi';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
@@ -12,9 +12,9 @@ const About = () => {
       <div className="align-element grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-16">
         {/* Image */}
         <img
-          src={aboutSvg}
+          src={about2}
           alt="About illustration"
-          className="w-full h-64 object-contain"
+          className="w-full  object-contain"
         />
 
         {/* Text Content */}
@@ -66,7 +66,7 @@ const About = () => {
             {/* Social Icons */}
             <div className="flex justify-center gap-6 text-purple-700 text-3xl">
               <a
-                href="mailto:naveenmahajan12345678@example.com"
+                href="mailto:naveenmahajan1235678@example.com"
                 aria-label="Email"
                 className="hover:text-purple-500 transition"
               >
